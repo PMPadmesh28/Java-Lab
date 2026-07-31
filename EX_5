@@ -1,0 +1,53 @@
+package javaapplication8;
+import java.util.Scanner;
+interface Arithmetic 
+{
+      void add(double a,double b);
+      void sub(double a,double b);
+      void mul(double a,double b);
+      void div(double a,double b);
+  }
+class arithmetic implements Calculator{
+    void add(double a,double b){
+        System.out.println("Result: "+(a+b));
+    }
+    void sub(double a,double b){
+        System.out.println("Result: "+(a-b));
+    }
+    void mul(double a,double b){
+        System.out.println("Result: "+(a*b));
+    }
+    void div(double a,double b){
+        System.out.println("Result: "+(a/b));
+    }
+}
+class Operations{
+    public static void main(String[] args) {
+        Scanner in=new Scanner(System.in);
+        System.out.println("Enter a first number:");
+        double num1=in.nextDouble();
+        System.out.println("Enter a second number:");
+        double num2=in.nextDouble();
+        arithmetic obj=new arithmetic();
+        System.out.println("Enter choice:");
+        int op=in.nextInt();
+        switch(op){
+            case 1:
+                 obj.add(num1, num2);
+                 break;
+            case 2:
+                obj.sub(num1, num2);
+                break;
+            case 3:
+                obj.mul(num1, num2);
+                break;
+            case 4:
+                 obj.div(num1, num2);
+                 break;
+            default:
+                System.out.println("Invalid Operation");
+                break;
+                
+            }
+       }
+}
